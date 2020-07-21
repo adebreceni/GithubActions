@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - id: install
-        run: sudo apt get install wget
+        run: sudo apt install wget
       - id: download
         run: wget google.com
       - id: verify
