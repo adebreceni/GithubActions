@@ -1,1 +1,13 @@
-
+name: "Test"
+on: [push]
+jobs:
+  setup:
+    name: "Setup"
+    runs-on: ubuntu-16.04
+    steps:
+      - id: install
+        run: sudo apt get install wget
+      - id: download
+        run: wget google.com
+      - id: verify
+        run: ls .
