@@ -4,8 +4,8 @@ jobs:
   setup:
     name: "Setup"
     runs-on: ubuntu-latest
-    container: 
-      image: ubuntu:14.04
     steps:
-      - id: info
-        run: uname -a && lsb_release
+      - id: checkout
+        uses: actions/checkout@v2
+      - id: build
+        run: pwd && ls
