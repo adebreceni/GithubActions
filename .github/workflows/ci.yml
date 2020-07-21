@@ -3,7 +3,7 @@ on: [push]
 jobs:
   setup:
     name: "Setup"
-    runs-on: ununtu-latest
+    runs-on: ubuntu-latest
     container: ubuntu:14.04
     steps:
       - id: info
