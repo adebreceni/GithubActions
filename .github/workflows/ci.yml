@@ -3,7 +3,8 @@ on: [push]
 jobs:
   setup:
     name: "Setup"
-    runs-on: ubuntu-16.04
+    runs-on: ununtu-latest
+    container: ubuntu:14.04
     steps:
       - id: info
-        run: docker container ls && docker image ls
+        run: uname -a && lsb_release
