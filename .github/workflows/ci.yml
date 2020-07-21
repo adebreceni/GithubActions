@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-16.04
     steps:
       - id: info
-        run: cmake --version && ccache --version
+        run: docker container ls && docker image ls
