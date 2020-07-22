@@ -11,7 +11,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.ccache
-          key: ${{github.ref}}-ccache
+          key: ${{github.ref}}-ccache-${{github.sha}}
+          restore-key: ${{github.ref}}-ccache-
       - id: install_deps
         run: |
           sudo apt install ccache
