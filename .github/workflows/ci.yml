@@ -3,25 +3,9 @@ on: [push]
 jobs:
   setup:
     name: "Setup"
-    runs-on: ubuntu-latest
-    container: ubuntu:14.04
+    runs-on: windows-2016
     steps:
       - id: checkout
         uses: actions/checkout@v2
-      - id: cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.ccache
-          key: ${{github.ref}}-ccache-${{github.sha}}
-          restore-keys: ${{github.ref}}-ccache-
-      - id: install_deps
-        run: |
-          sudo apt install ccache
-          echo "::set-env name=PATH::/usr/lib/ccache:$PATH"
-          echo "::set-env name=CCACHE_LOGFILE::ccache-log.txt"
-      - id: build
-        run: uname -a && cat /etc/lsb-release
-      - id: upload_log
-        uses: actions/upload-artifact@v2
-        with:
-          path: ccache-log.txt
+      - id: check
+        run: msbuild /version
