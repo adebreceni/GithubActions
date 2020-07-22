@@ -18,7 +18,7 @@ jobs:
           export PATH="/usr/lib/ccache:$PATH"
           export CCACHE_LOGFILE=ccache-log.txt
       - id: build
-        run: g++ main.cpp
+        run: env && which g++ && g++ main.cpp
       - id: upload_log
         uses: actions/upload-artifact@v2
         with:
