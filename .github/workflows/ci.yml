@@ -6,6 +6,6 @@ jobs:
     runs-on: windows-2016
     steps:
       - id: setup
-        uses: microsoft/setup-msbuild@v1
+        uses: warrenbuckley/Setup-MSBuild@v1
       - id: check
         run: msbuild /version
