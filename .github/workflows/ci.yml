@@ -5,7 +5,7 @@ jobs:
     name: "Setup"
     runs-on: windows-2016
     steps:
-      - id: checkout
-        uses: actions/checkout@v2
+      - id: setup
+        uses: microsoft/setup-msbuild@v1
       - id: check
         run: msbuild /version
