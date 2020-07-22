@@ -10,7 +10,7 @@ jobs:
           PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\;%path%"
           PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\;%path%"
           PATH="C:\Windows\Microsoft.NET\Framework\v4.0.30319;%path%"
-          PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\\MSBuild\15.0\bin;%path%"
+          PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\\MSBuild\15.0\Bin;%path%"
           PATH="C:\Program Files (x86)\Windows Kits\10\bin\x86;%path%"
           PATH="C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86;%path%"
           PATH="C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\;%path%"
@@ -26,6 +26,8 @@ jobs:
           where msbuild
           where cmake
           where cl
+          cd "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC"
+          dir
         shell: cmd
       - id: check
         run: msbuild /version
