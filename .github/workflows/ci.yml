@@ -22,8 +22,8 @@ jobs:
           $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCPackages"
           $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86"
           $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin"
-          msbuild /version
-          cmake --version
-          cl
+          where msbuild
+          where cmake
+          where cl
       - id: check
         run: msbuild /version
