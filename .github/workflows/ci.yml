@@ -20,7 +20,7 @@ jobs:
           echo "::set-env name=PATH::/usr/lib/ccache:$PATH"
           echo "::set-env name=CCACHE_LOGFILE::ccache-log.txt"
       - id: build
-        run: which g++ && pwd && ls && g++ -c main.cpp
+        run: which g++
       - id: upload_log
         uses: actions/upload-artifact@v2
         with:
