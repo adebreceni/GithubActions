@@ -22,6 +22,7 @@ jobs:
           PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCPackages;%path%"
           PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86;%path%"
           PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;%path%"
+          PATH="C:\Windows\System32\;%path%"
           where msbuild
           where cmake
           where cl
