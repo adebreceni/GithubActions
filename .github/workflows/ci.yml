@@ -15,8 +15,8 @@ jobs:
       - id: install_deps
         run: |
           sudo apt install ccache
-          echo '::set-env name=PATH::/usr/lib/ccache:$PATH'
-          echo '::set-env name=CCACHE_LOGFILE::ccache-log.txt'
+          echo "::set-env name=PATH::/usr/lib/ccache:$PATH"
+          echo "::set-env name=CCACHE_LOGFILE::ccache-log.txt"
       - id: build
         run: env && which g++ && g++ main.cpp
       - id: upload_log
