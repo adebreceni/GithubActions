@@ -7,5 +7,18 @@ jobs:
     steps:
       - id: checkout
         uses: actions/checkout@v2
+      - id: cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.ccache
+      - id: install_deps
+        run: |
+          sudo apt install ccache
+          export PATH="/usr/lib/ccache:$PATH"
+          export CCACHE_LOGFILE=ccache-log.txt
       - id: build
-        run: pwd && ls -la
+        run: g++ main.cpp
+      - id: upload_log
+        uses: actions/upload-artifact@v2
+        with:
+          path: ccache-log.txt
