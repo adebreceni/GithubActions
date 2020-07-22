@@ -8,19 +8,21 @@ jobs:
       - id: setup
         run: |
           $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\"
-          $env:PATH += "C:\Windows\Microsoft.NET\Framework\v4.0.30319"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\\MSBuild\15.0\bin"
-          $env:PATH += "C:\Program Files (x86)\Windows Kits\10\bin\x86"
-          $env:PATH += "C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86"
-          $env:PATH += "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Team Tools\Performance Tools"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\Roslyn"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCPackages"
-          $env:PATH += "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\"
+          $env:PATH += ";C:\Windows\Microsoft.NET\Framework\v4.0.30319"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\\MSBuild\15.0\bin"
+          $env:PATH += ";C:\Program Files (x86)\Windows Kits\10\bin\x86"
+          $env:PATH += ";C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\Shared\Common\VSPerfCollectionTools\"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Team Tools\Performance Tools"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\Roslyn"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\CommonExtensions\Microsoft\TestWindow"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCPackages"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\HostX86\x86"
+          $env:PATH += ";C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin"
           msbuild /version
+          cmake --version
       - id: check
         run: msbuild /version
