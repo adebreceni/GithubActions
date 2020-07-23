@@ -4,6 +4,7 @@ jobs:
   setup:
     name: "Setup"
     runs-on: ubuntu-18.04
+    container: ubuntu:14.04
     steps:
       - id: check
-        run: docker --version
+        run: pwd && ls
