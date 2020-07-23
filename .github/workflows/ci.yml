@@ -10,3 +10,4 @@ jobs:
         run: |
           sudo apt install -y software-properties-common
           sudo apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
+          sudo apt install cmake
