@@ -10,5 +10,6 @@ jobs:
       - id: exec
         run: |
           cat /etc/hosts
-          echo "127.0.0.1    $HOSTNAME" >> /etc/hosts
+          echo -e "127.0.0.1\t$HOSTNAME" | tee -a /etc/hosts
+          cat /etc/hosts
           g++ main.cpp && ./a.out
