@@ -9,4 +9,5 @@ jobs:
         uses: actions/checkout@v2
       - id: exec
         run: |
+          sudo scutil --set HostName ci_agent
           g++ main.cpp && ./a.out
