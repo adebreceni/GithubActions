@@ -2,9 +2,10 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
+#include <unistd.h>
 
 int main(){
-  char hostname[1024]{};
+  char hostname[1024] = {};
   gethostname(hostname, 1024);
   addrinfo hints{};
   memset(&hints, 0, sizeof hints);
