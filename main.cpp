@@ -7,6 +7,7 @@
 int main(){
   char hostname[1024] = {};
   gethostname(hostname, 1024);
+  std::cout << "Hostname: " << hostname << std::endl;
   addrinfo hints;
   memset(&hints, 0, sizeof hints);
   hints.ai_family = AF_UNSPEC;
