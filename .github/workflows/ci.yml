@@ -7,4 +7,6 @@ jobs:
     container: ubuntu:14.04
     steps:
       - id: check
-        run: sudo apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
+        run: |
+          sudo apt install software-properties-common
+          sudo apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
