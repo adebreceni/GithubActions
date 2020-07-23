@@ -7,4 +7,4 @@ jobs:
     container: ubuntu:14.04
     steps:
       - id: check
-        run: pwd && ls
+        run: sudo apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
