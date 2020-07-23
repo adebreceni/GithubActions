@@ -8,5 +8,5 @@ jobs:
     steps:
       - id: check
         run: |
-          sudo apt install software-properties-common
+          sudo apt install -y software-properties-common
           sudo apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
