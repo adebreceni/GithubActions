@@ -9,4 +9,6 @@ jobs:
         uses: actions/checkout@v2
       - id: exec
         run: |
+          cat /etc/hosts
+          echo "127.0.0.1    $HOSTNAME" >> /etc/hosts
           g++ main.cpp && ./a.out
