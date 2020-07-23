@@ -3,17 +3,7 @@ on: [push]
 jobs:
   setup:
     name: "Setup"
-    runs-on: macos-10.15
+    runs-on: ubuntu-18.04
     steps:
-      - id: checkout
-        uses: actions/checkout@v2
-      - id: exec
-        run: |
-          echo "********"
-          cat /etc/hosts
-          echo "********"
-          echo -e "127.0.0.1\t$HOSTNAME" | sudo tee -a /etc/hosts
-          echo "********"
-          cat /etc/hosts
-          echo "********"
-          g++ main.cpp && ./a.out
+      - id: check
+        run: docker --version
