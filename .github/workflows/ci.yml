@@ -8,16 +8,7 @@ jobs:
     steps:
       - id: setup_env
         run: |
-          sudo apt install -y software-properties-common
-          sudo apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
-          sudo apt update
-          sudo apt install wget
-          wget https://github.com/Kitware/CMake/releases/download/v3.18.0/cmake-3.18.0-Linux-x86_64.sh
-          chmod a+x cmake-3.18.0-Linux-x86_64.sh
-          export CMAKE_HOME=$HOME/opt/cmake
-          mkdir -p $CMAKE_HOME
-          ./cmake-3.18.0-Linux-x86_64.sh --prefix=$CMAKE_HOME --skip-license
-          echo "::set-env name=PATH::$CMAKE_HOME/bin:$PATH"
-          echo "::set-env name=CMAKE_ROOT::$CMAKE_HOME/share/cmake-3.18"
+          pwd
+          echo $HOME
       - id: build
         run: cmake --version
