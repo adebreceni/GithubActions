@@ -6,13 +6,8 @@ jobs:
     runs-on: ubuntu-18.04
     container: ubuntu:14.04
     steps:
-      - id: checkout
-        uses: actions/checkout@v2
-      - id: setup_env
+      - id: check
         run: |
-          echo "banana" >> hello.txt
-      - id: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: hello_file
-          path: hello.txt
+          patch --version
+          sudo apt install -y patch
+          patch --version
