@@ -8,6 +8,5 @@ jobs:
     steps:
       - id: check
         run: |
-          patch --version
           sudo apt install -y patch
           patch --version
