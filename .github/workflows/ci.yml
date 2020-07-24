@@ -6,12 +6,16 @@ jobs:
     runs-on: ubuntu-18.04
     container: ubuntu:14.04
     steps:
-      - id: check
+      - id: setup_env
         run: |
           sudo apt install -y software-properties-common
           sudo apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
           sudo apt update
           sudo apt install wget
           wget https://github.com/Kitware/CMake/releases/download/v3.18.0/cmake-3.18.0-Linux-x86_64.sh
-          sudo ./cmake-3.18.0-Linux-x86_64.sh
-          cmake --version
+          chmod a+x cmake-3.18.0-Linux-x86_64.sh
+          ./cmake-3.18.0-Linux-x86_64.sh --prefix=/opt/cmake
+          echo "::set-env PATH=/opt/cmake/bin:$PATH"
+          echo "::set-env CMAKE_ROOT=/opt/cmake/share/cmake-3.18"
+      - id: build
+        run: cmake --version
