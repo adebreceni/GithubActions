@@ -14,6 +14,7 @@ jobs:
           sudo apt install wget
           wget https://github.com/Kitware/CMake/releases/download/v3.18.0/cmake-3.18.0-Linux-x86_64.sh
           chmod a+x cmake-3.18.0-Linux-x86_64.sh
+          mkdir -p $HOME/opt/cmake
           ./cmake-3.18.0-Linux-x86_64.sh --prefix="$HOME/opt/cmake" --skip-license
           echo "::set-env PATH=$HOME/opt/cmake/bin:$PATH"
           echo "::set-env CMAKE_ROOT=$HOME/opt/cmake/share/cmake-3.18"
