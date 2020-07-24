@@ -13,6 +13,7 @@ jobs:
           sudo apt install wget
           wget https://github.com/Kitware/CMake/releases/download/v3.18.0/cmake-3.18.0-Linux-x86_64.sh -o $HOME/cmake-3.18.0-Linux-x86_64.sh
           ls
+          echo "******"
           ls $HOME
       - id: build
         run: cmake --version
