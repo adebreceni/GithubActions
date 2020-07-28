@@ -13,6 +13,7 @@ jobs:
           path: ~/.ccache
           key: five-${{github.ref}}-${{github.sha}}
           restore-keys: |
+            five-${{github.ref}}-
             five-refs/heads/master-
       - id: install_deps
         run: |
