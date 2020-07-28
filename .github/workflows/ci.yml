@@ -1,12 +1,21 @@
 name: "Test"
-on: [push]
+on: [push, pull_request, workflow_dispatch]
 jobs:
   setup:
     name: "Setup"
     runs-on: ubuntu-18.04
-    container: ubuntu:14.04
     steps:
-      - id: check
+      - id: checkout
+        uses: actions/checkout@v2
+      - id: cache
+        uses: actions/cache@v2
+        with:
+          key: five-${{github.ref}}-${{github.sha}}
+          restore-keys: |
+            five-refs/head/master-
+      - id: install_deps
         run: |
-          sudo apt install -y patch
-          patch --version
+          sudo apt install ccache
+          echo "::set-env name=PATH::/usr/lib/ccache:$PATH"
+      - id: build
+        run: g++ -c main.cpp
