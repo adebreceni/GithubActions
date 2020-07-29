@@ -19,7 +19,7 @@ jobs:
       - id: install_deps
         run: |
           apt update
-          apt install -y ccache wget patch
+          apt install -y ccache wget patch gcc g++ bison flex libboost-all-dev uuid-dev openssl libcurl4-openssl-dev libpython3-dev liblua5.1-0-dev libpcap-dev libssh2-1-dev
           cd $HOME
           wget https://github.com/Kitware/CMake/releases/download/v3.18.0/cmake-3.18.0-Linux-x86_64.sh
           chmod a+x cmake-3.18.0-Linux-x86_64.sh
