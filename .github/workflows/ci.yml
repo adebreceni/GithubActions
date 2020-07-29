@@ -18,7 +18,7 @@ jobs:
             ubuntu-20.04-refs/heads/master-
       - id: install_deps
         run: |
-          sudo apt install ccache
+          apt install ccache
           which ccache
           cmake --version
           echo "::set-env name=PATH::/usr/lib/ccache:$PATH"
