@@ -5,31 +5,9 @@ jobs:
     name: "Setup"
     runs-on: ubuntu-18.04
     container: ubuntu:20.04
+    timeout-minutes: 2
     steps:
-      - id: checkout
-        uses: actions/checkout@v2
-      - id: cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.ccache
-          key: ubuntu-20.04-${{github.ref}}-${{github.sha}}
-          restore-keys: |
-            ubuntu-20.04-${{github.ref}}-
-            ubuntu-20.04-refs/heads/master-
       - id: install_deps
         run: |
           apt update
-          apt install -y ccache wget patch gcc g++ bison flex libboost-all-dev uuid-dev openssl libcurl4-openssl-dev libpython3-dev liblua5.1-0-dev libpcap-dev libssh2-1-dev
-          cd $HOME
-          wget https://github.com/Kitware/CMake/releases/download/v3.18.0/cmake-3.18.0-Linux-x86_64.sh
-          chmod a+x cmake-3.18.0-Linux-x86_64.sh
-          export CMAKE_HOME=$HOME/opt/cmake
-          mkdir -p $CMAKE_HOME
-          ./cmake-3.18.0-Linux-x86_64.sh --prefix=$CMAKE_HOME --skip-license
-          echo "::set-env name=CMAKE_ROOT::$CMAKE_HOME/share/cmake-3.18"
-          echo "::set-env name=PATH::/usr/lib/ccache:$CMAKE_HOME/bin:$PATH"
-      - id: build
-        run: |
-          cmake --version
-          ccache --version
-          g++ -c main.cpp
+          apt install -y tzdata
