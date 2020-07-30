@@ -8,6 +8,6 @@ jobs:
     steps:
       - id: install_deps
         run: |
-          sudo apt install ccache
+          sudo apt install ccache tzdata
           cmake --version
           ccache --version
