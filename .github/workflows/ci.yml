@@ -3,21 +3,11 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   setup:
     name: "Setup"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
+    timeout-minutes: 2
     steps:
-      - id: checkout
-        uses: actions/checkout@v2
-      - id: cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.ccache
-          key: five-${{github.ref}}-${{github.sha}}
-          restore-keys: |
-            five-${{github.ref}}-
-            five-refs/heads/master-
       - id: install_deps
         run: |
-          sudo apt install ccache
-          echo "::set-env name=PATH::/usr/lib/ccache:$PATH"
-      - id: build
-        run: g++ -c main.cpp
+          sudo apt install ccache tzdata
+          cmake --version
+          ccache --version
