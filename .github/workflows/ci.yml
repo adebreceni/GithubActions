@@ -8,5 +8,6 @@ jobs:
     steps:
       - id: install_deps
         run: |
+          sudo apt install ccache
           cmake --version
           ccache --version
